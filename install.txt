@@ -1,0 +1,75 @@
+1st	Install BWA.
+
+git clone https://github.com/lh3/bwa.git
+cd bwa; make
+
+-->Done,ready to bwa index and bwa mem
+
+2nd Install GATK
+
+Install git lfs (large files): 
+	
+	git lfs install followed by a git lfs pull from the root 		directory.
+
+
+git clone https://github.com/broadinstitute/gatk.git
+
+	cd gatk;
+	  ./gradlew bundle;
+	  ./gradlew bundle
+
+Run cd gatk/  then ./gatk or java -jar /build/libs/gatk"""".jar
+or if in gatk-4.0... just java -jar gatk""""".jar
+
+3rd Install Samtools
+
+git clone https://github.com/samtools/samtools.git
+
+autoheader            # Build config.h.in (this may generate a warning about # AC_CONFIG_SUBDIRS - please ignore it).
+
+
+autoconf -Wno-syntax  # Generate the configure script
+./configure           # Needed for choosing optional functionality
+make
+make install
+
+4th Install HTSLIB
+
+git clone https://github.com/samtools/htslib.git
+
+autoheader     # If using configure, generate the header template...
+autoconf       # ...and configure script (or use autoreconf to do both)
+./configure    # Optional but recommended, for choosing extra functionality
+make
+make install
+
+5th Install BCF TOOLS
+
+http://www.htslib.org/download/
+
+KEEP all the same version of samtools,htslibs and bcftools.
+
+
+6th Install PICARD tools.
+
+    git clone https://github.com/broadinstitute/picard.git
+    cd picard/
+	    ./gradlew shadowJar
+	    java -jar build/libs/picard.jar
+	    ./gradlew jar
+	    ./gradlew clean
+
+
+
+7th Install VEP + $HOME./vep/directory will be created where PLUGINS + Reference files will be stored.
+
+git clone https://github.com/Ensembl/ensembl-vep.git
+cd ensembl-vep
+perl INSTALL.pl
+
+
+
+
+
+
+
